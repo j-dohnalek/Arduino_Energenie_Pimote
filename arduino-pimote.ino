@@ -1,7 +1,7 @@
 /*
 The script is based of the https://github.com/MiniGirlGeek/energenie-demo python script to 
 control the pimote https://energenie4u.co.uk/index.php/catalogue/product/ENER002-2PI using
-Raspberry pi. More information on http://www.badcompanyx.eu/
+Raspberry pi. More information on http://www.jdohnalek.com/
 
 EXAMPLES:
 
