@@ -39,83 +39,49 @@ int gpio25 = 5; // CE modular enable (Output ON/OFF)
 char* on[] ={"1011", "1111", "1110","1101", "1100"};
 char* off[]={"0011", "0111", "0110","0101", "0100"};
 
-void setupPimotePins()
-{
-  // Select the pins used for the encoder K0-K3 data inputs
-  pinMode(gpio17, OUTPUT);
-  pinMode(gpio22, OUTPUT);
-  pinMode(gpio23, OUTPUT);
-  pinMode(gpio27, OUTPUT);
-  
-  // Select the signal used to select ASK/FSK
-  pinMode(gpio24, OUTPUT);
-  // Select the signal used to enable/disable the modulator
-  pinMode(gpio25, OUTPUT);
-  
-  // Disable the modulator by setting CE pin lo
+// Initialize the Pimote pins
+void setupPimotePins(){
+  int pin[] = {gpio17, gpio22, gpio23, gpio27, gpio24, gpio25};
+  for(int i=0; i<6; i++){ pinMode(pin[i], OUTPUT);  }
+  for(i=0; i<6; i++){ pinMode(pin[i], LOW); }
+  delay(500);
+}
+
+// Handle Energenie Pimote socket state
+// @param socket, int: socket to address
+// @param on_or_off, char[]: series of bits to address socket
+void state(int socket, char* on_or_off[]){
+  int pin[] = {gpio27, gpio23, gpio22, gpio17};
+  for(i=0; i<4; i++){
+    digitalWrite(pin[i], LOW);
+    if(on_or_off[socket][i] - '0' == 1 ){
+      digitalWrite(pin[i], HIGH);
+    }   
+  }
+  delay(100);
+  digitalWrite(gpio25, HIGH);
+  delay(250);
   digitalWrite(gpio25, LOW);
-  
-  // Set the modulator to ASK for On Off Keying
-  // by setting MODSEL pin lo
-  digitalWrite(gpio24, LOW);
-  
-  // Initialise K0-K3 inputs of the encoder to 0000
-  digitalWrite(gpio17, LOW);
-  digitalWrite(gpio22, LOW);
-  digitalWrite(gpio23, LOW);
-  digitalWrite(gpio27, LOW);
-  
-  // Give a short delay after setup
-  delay(500); 
 }
 
-void state(int state, char* on_or_off[])
-{
-    digitalWrite(gpio27, LOW);
-    digitalWrite(gpio23, LOW);
-    digitalWrite(gpio22, LOW);
-    digitalWrite(gpio17, LOW);
-    
-    if(on_or_off[state][0] - '0' == 1 )
-      digitalWrite(gpio27, HIGH);
-    
-    if(on_or_off[state][1] - '0' == 1 )
-      digitalWrite(gpio23, HIGH);
-    
-        
-    if(on_or_off[state][2] - '0' == 1 )
-      digitalWrite(gpio22, HIGH);
-
-        
-    if(on_or_off[state][3] - '0' == 1 )
-      digitalWrite(gpio17, HIGH);
-    
-    delay(100);
-    digitalWrite(gpio25, HIGH);
-    delay(250);
-    digitalWrite(gpio25, LOW);
-}
-
-
-void switch_on(int socket)
-{
+// Turn socket on method
+// @param socket, int: socket to switch
+void switch_on(int socket){
   state(socket, on);
 }
 
-
-void switch_off(int socket)
-{
+// Turn socket on method
+// @param socket, int: socket to switch
+void switch_off(int socket){
   state(socket, off);
 }
 
 
-// BEGIN +++++++++++
-
+// BEGIN
 
 void setup(){
   setupPimotePins();
 }
-
 
 void loop(){
   
