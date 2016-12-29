@@ -1,8 +1,6 @@
 arduino-pimote
 ==============
 
-This is an attempt to move the Energenie Pimote RF remote socket controller from Raspberry Pi to Arduino platform. The Raspberry pi pins are 3V3 and Arduino operate on 5V. 
-
-The Energenie controller handles it without any problem. I have started using it since September 2015 and did not encounter any issues with the components. 
+The Energenie Pimote remote socket control board can withstand 5V of the Arduino pins. This allows it to be ported to Arduino board. This is an attempt to move the Energenie Pimote RF remote socket controller from Raspberry Pi to Arduino board. 
 
 More information on https://jdohnalek.com
