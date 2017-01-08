@@ -14,6 +14,7 @@
 
 Pimote::Pimote(int io17, int io22, int io23, int io27, int io24, int io25)
 {
+  // Remap the GPIO from Raspberry Pi to Arduino
   gpio17 = io17; // Encoded Signal D0
   gpio22 = io22; // Encoder Signal D1
   gpio23 = io23; // Encoder Signal D2
@@ -31,7 +32,9 @@ Pimote::Pimote(int io17, int io22, int io23, int io27, int io24, int io25)
 void Pimote::Setup(void)
 {
   int pin[] = {gpio17, gpio22, gpio23, gpio27, gpio24, gpio25};
+  // Set the pins to output
   for(int i=0; i<6; i++){ pinMode(pin[i], OUTPUT);  }
+  // Set the pins low
   for(int i=0; i<6; i++){ pinMode(pin[i], LOW); }
   delay(500);
 }
@@ -55,7 +58,7 @@ void Pimote::Off(int s)
 
 // Private Variables ///////////////////////////////////////////////////////////
 
-
+// Binary mapping of the output state
 char* Pimote::on[5]  = {"1011", "1111", "1110","1101", "1100"};
 char* Pimote::off[5] = {"0011", "0111", "0110","0101", "0100"};
 
@@ -65,6 +68,7 @@ char* Pimote::off[5] = {"0011", "0111", "0110","0101", "0100"};
 
 void Pimote::State(int socket, char* on_or_off[])
 {
+  // Check the state of each pin
   int pin[] = {gpio27, gpio23, gpio22, gpio17};
   for(int i=0; i<4; i++){
     digitalWrite(pin[i], LOW);
