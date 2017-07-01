@@ -12,24 +12,45 @@
 // Constructor /////////////////////////////////////////////////////////////////
 
 
-Pimote::Pimote(int io17, int io22, int io23, int io27, int io24, int io25)
-{
-  // Remap the GPIO from Raspberry Pi to Arduino
-  gpio17 = io17; // Encoded Signal D0
-  gpio22 = io22; // Encoder Signal D1
-  gpio23 = io23; // Encoder Signal D2
-  gpio27 = io27; // Encoder Signal D3
-  gpio24 = io24; // MODSEL mode select signal (OOK/FSK)
-  gpio25 = io25; // CE modular enable (Output ON/OFF)
-
-  Setup();
+Pimote::Pimote(){
+  
 }
 
 
 // Public Methods //////////////////////////////////////////////////////////////
 
+void setESD0(int p){
+  // Encoded Signal D0
+  gpio17 = p;
+}
 
-void Pimote::Setup(void)
+void setESD1(int p){
+  // Encoder Signal D1
+  gpio22 = p;
+}
+
+void setESD2(int p){
+  // Encoder Signal D2
+  gpio23 = p;
+}
+
+void setESD3(int p){
+  // Encoder Signal D3
+  gpio27 = p;
+}
+
+void setMODSEL(int p){
+  // MODSEL mode select signal (OOK/FSK)
+  gpio24 = p;
+}
+
+void setCE(int p){
+  // CE modular enable (Output ON/OFF)
+  gpio25 = p;
+}
+
+// Enable all pins
+void Pimote::begin(void)
 {
   int pin[] = {gpio17, gpio22, gpio23, gpio27, gpio24, gpio25};
   // Set the pins to output
