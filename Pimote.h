@@ -11,7 +11,15 @@ class Pimote
 {
   public:
     // Initiate the pins
-    Pimote(int io17, int io22, int io23, int io27, int io24, int io25);
+    Pimote();
+    
+    void setESD0(int p);
+    void setESD1(int p);
+    void setESD2(int p);
+    void setESD3(int p);
+    void setMODSEL(int p);
+    void setCE(int p);
+  
     // Turn socket on
     void On(int s);
     // Turn socket off
