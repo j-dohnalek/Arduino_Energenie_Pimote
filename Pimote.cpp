@@ -8,15 +8,6 @@
 #include "Arduino.h" // include core Arduino function
 #include "Pimote.h"  // include Pimote definition
 
-
-// Constructor /////////////////////////////////////////////////////////////////
-
-
-Pimote::Pimote(){
-  
-}
-
-
 // Public Methods //////////////////////////////////////////////////////////////
 
 void setESD0(int p){
