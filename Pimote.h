@@ -10,8 +10,11 @@
 class Pimote
 {
   public:
+    // Initiate the pins
     Pimote(int io17, int io22, int io23, int io27, int io24, int io25);
+    // Turn socket on
     void On(int s);
+    // Turn socket off
     void Off(int s);
 
   private:
@@ -23,8 +26,11 @@ class Pimote
     int gpio27; // Encoder Signal D3
     int gpio24; // MODSEL mode select signal (OOK/FSK)
     int gpio25; // CE modular enable (Output ON/OFF)
-
+  
+    // Setup the sockets
     void Setup(void);
+    
+    // Set the state of the socket
     void State(int socket, char* on_or_off[]);
 };
 
