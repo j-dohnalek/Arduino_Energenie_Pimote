@@ -10,7 +10,7 @@ Product: https://energenie4u.co.uk/catalogue/product/ENER002-2PI
 <h2>Additional Information</h2>
 More information on https://jdohnalek.com
 
-<h2>Library</h2>
+<h2>Methods</h2>
 
 Create the object
 ```C
