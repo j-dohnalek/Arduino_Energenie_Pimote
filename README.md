@@ -1,8 +1,11 @@
-arduino-pimote
-==============
+#Arduino Pimote Library
 
-The Energenie Pimote remote socket control board can withstand 5V of the Arduino pins. This allows Pimote to be ported to any Arduino board. This is an attempt to move the Energenie Pimote RF remote socket controller from Raspberry Pi to Arduino board. 
-
-More information on https://jdohnalek.com
-
+##Usage
+Energenie Pimote remotely controlled sockets
 Product: https://energenie4u.co.uk/catalogue/product/ENER002-2PI
+
+##Power
+3.3-5V
+
+##Additional Information
+More information on https://jdohnalek.com
