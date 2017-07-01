@@ -1,7 +1,7 @@
 <h1>Arduino Pimote Library</h1>
 
 <h2>Usage</h2>
-Energenie Pimote remotely controlled sockets
+Energenie Pimote remotely controlled sockets<br />
 Product: https://energenie4u.co.uk/catalogue/product/ENER002-2PI
 
 <h2>Power</h2>
