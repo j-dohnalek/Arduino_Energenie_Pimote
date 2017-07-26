@@ -3,9 +3,6 @@
 ## Power
 3.3-5V
 
-## Additional Information
-More information on https://jdohnalek.com
-
 ## Configuration
 
 Include the library
