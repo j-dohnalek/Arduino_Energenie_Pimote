@@ -27,8 +27,7 @@ socket.begin();
 
 ## Usage
 
-Socket 0 includes all sockets<br>
-Individual sockets can be addressed using integers between 1-4
+Socket 0 includes all sockets, individual sockets can be addressed using integers between 1-4.
 
 Turn socket on
 ```C
@@ -40,5 +39,3 @@ Turn socket off
 socket.off(int s);
 
 ```
-
-
