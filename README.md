@@ -1,5 +1,8 @@
 # Arduino Pimote Library
 
+## Example Usage
+https://github.com/learn2develop/Central_Heating_Module_Firmware
+
 ## Power
 3.3-5V
 
